@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "es6-shim@0.35.6",
+      "destination": "lib/es6-shim"
+    },
+    {
+      "library": "es5-shim@4.5.15",
+      "destination": "lib/es5-shim"
+    },
+    {
+      "provider": "unpkg",
+      "library": "san@3.10.10",
+      "destination": "lib\\san",
+      "files":[
+        "dist/*",
+        "types/*",
+        "package.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>测试</title>
+    <meta charset="utf-8"/>
+    <script src="lib/es5-shim/es5-shim.js"></script>
+    <script src="lib/es6-shim/es6-shim.js"></script>
+    <script src="lib/san/dist/san.js"></script>
+</head>
+<body>
+<script type="text/template" id="appTmpl">
+<div>
+    <div> <input type="checkbox" checked="{{isAllChecked}}" on-click="toggleAll()" /> </div>
+
+    <div class="content-box">
+        <div class="row " s-for="item,index in list"> 
+            <input s-if="!twoWayBind" type="checkbox" checked="{{item.checked}}" on-click="toggle(item,index)" /> 
+            <input s-else type="checkbox" checked="{=item.checked=}"  />
+            
+            {{ item.name }} 
+
+            [后面测试文本双向绑定: ]
+            <input type="text" value="{= item.org.txt =}" />
+            [value={{item.org.txt}}]
+        </div>
+    </div>
+</div>
+</script>
+<script src="app.js"></script>
+</body>
+</html>
